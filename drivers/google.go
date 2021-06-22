@@ -3,7 +3,7 @@ package drivers
 import (
 	"net/http"
 
-	"github.com/danilopolani/gocialite/structs"
+	"github.com/fullteam-tech/gocialite/structs"
 	"golang.org/x/oauth2/google"
 )
 
@@ -15,7 +15,7 @@ func init() {
 
 // GoogleUserMap is the map to create the User struct
 var GoogleUserMap = map[string]string{
-	"id":          "ID",
+	"sub":         "ID",
 	"email":       "Email",
 	"name":        "FullName",
 	"given_name":  "FirstName",
@@ -26,7 +26,7 @@ var GoogleUserMap = map[string]string{
 // GoogleAPIMap is the map for API endpoints
 var GoogleAPIMap = map[string]string{
 	"endpoint":     "https://www.googleapis.com",
-	"userEndpoint": "/oauth2/v2/userinfo",
+	"userEndpoint": "/oauth2/v3/tokeninfo",
 }
 
 // GoogleUserFn is a callback to parse additional fields for User
